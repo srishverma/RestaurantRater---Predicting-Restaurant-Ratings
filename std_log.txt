@@ -1,0 +1,142 @@
+Failure while loading azureml_run_type_providers. Failed to load entrypoint azureml.PipelineRun = azureml.pipeline.core.run:PipelineRun._from_dto with exception (cryptography 37.0.4 (/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages), Requirement.parse('cryptography<39,>=38.0.0'), {'pyopenssl'}).
+Failure while loading azureml_run_type_providers. Failed to load entrypoint azureml.ReusedStepRun = azureml.pipeline.core.run:StepRun._from_reused_dto with exception (cryptography 37.0.4 (/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages), Requirement.parse('cryptography<39,>=38.0.0'), {'pyopenssl'}).
+Failure while loading azureml_run_type_providers. Failed to load entrypoint azureml.StepRun = azureml.pipeline.core.run:StepRun._from_dto with exception (cryptography 37.0.4 (/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages), Requirement.parse('cryptography<39,>=38.0.0'), {'pyopenssl'}).
+Failure while loading azureml_run_type_providers. Failed to load entrypoint azureml.scriptrun = azureml.core.script_run:ScriptRun._from_run_dto with exception (cryptography 37.0.4 (/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages), Requirement.parse('cryptography<39,>=38.0.0'), {'pyopenssl'}).
+Session_id = 72ad947d-8038-4134-9fe5-771c71e91077
+Invoking module by urldecode_invoker 0.0.8.
+
+Module type: custom module.
+
+Using runpy to invoke module 'azureml.designer.modules.recommendation.dnn.wide_and_deep.train.run'.
+
+2023-06-26 04:54:18,392 studio.common        INFO       azureml-designer-recommender-modules 0.0.56
+2023-06-26 04:54:18,555 studio.core          INFO       preprocess_transactions - Start:
+2023-06-26 04:54:18,565 studio.core          INFO       preprocess_transactions - End with 0.0100s elapsed.
+2023-06-26 04:54:18,566 studio.core          INFO       preprocess_features - Start:
+2023-06-26 04:54:18,569 studio.core          INFO       preprocess_features - End with 0.0035s elapsed.
+2023-06-26 04:54:18,569 studio.core          INFO       preprocess_features - Start:
+2023-06-26 04:54:18,573 studio.core          INFO       preprocess_features - End with 0.0035s elapsed.
+2023-06-26 04:54:18,578 studio.common        INFO       Get 4 features
+2023-06-26 04:54:18,589 studio.common        INFO       Create feature metas for 4 features
+2023-06-26 04:54:18,591 studio.common        INFO       Get 3 features
+2023-06-26 04:54:18,600 studio.common        INFO       Create feature metas for 3 features
+2023-06-26 04:54:18,600 studio.common        DEBUG      Init train input function builder.
+2023-06-26 04:54:18,600 studio.common        INFO       Build 4 features for User ids.
+2023-06-26 04:54:18,605 studio.common        INFO       Process null values for features.
+2023-06-26 04:54:18,607 studio.common        INFO       Build 3 features for Item ids.
+2023-06-26 04:54:18,612 studio.common        INFO       Process null values for features.
+2023-06-26 04:54:18,614 studio.module        INFO       Get 580 training instances, and 10.0 batches per epoch.
+2023-06-26 04:54:18,649 studio.module        INFO       Build model:
+Epochs: 15
+Batch size: 64
+Wide optimizer: OptimizerSelection.Adagrad
+Wide learning rate: 0.1
+Deep optimizer: OptimizerSelection.Adagrad
+Deep learning rate: 0.1
+Hidden units: (256, 128)
+Activation function: ActivationFnSelection.ReLU
+Dropout: 0.8
+Batch norm: True
+Crossed dimension: 1000
+User embedding dimension: 16
+Item embedding dimension: 16
+Categorical feature embedding dimension: 4
+2023-06-26 04:54:18,649 studio.module        INFO       Model is expected to be fed with features: ['feature_user_feature_0', 'feature_user_feature_2', 'feature_item_feature_2', 'User', 'feature_item_feature_1', 'feature_user_feature_3', 'Item', 'feature_item_feature_0', 'feature_user_feature_1']
+2023-06-26 04:54:18,651 tensorflow           INFO       Using config: {'_model_dir': '/tmp/tmpswx4_nty/checkpoints', '_tf_random_seed': 42, '_save_summary_steps': 100, '_save_checkpoints_steps': 150.0, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    meta_optimizer_iterations: ONE
+  }
+}
+, '_keep_checkpoint_max': 1, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10.0, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_checkpoint_save_graph_def': True, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+2023-06-26 04:54:18,966 tensorflow           WARNING    From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow/python/util/lazy_loader.py:63: The name tf.estimator.inputs is deprecated. Please use tf.compat.v1.estimator.inputs instead.
+
+2023-06-26 04:54:19,012 tensorflow           WARNING    From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/azureml/designer/modules/recommendation/dnn/wide_and_deep/common/input_function_builder.py:63: The name tf.estimator.inputs.pandas_input_fn is deprecated. Please use tf.compat.v1.estimator.inputs.pandas_input_fn instead.
+
+2023-06-26 04:54:19,013 studio.core          INFO       Training Wide & Deep recommendation model - Start:
+2023-06-26 04:54:19,017 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow/python/training/training_util.py:400: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+2023-06-26 04:54:19.024991: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/nccl-rdma-sharp-plugins/lib
+2023-06-26 04:54:19.025023: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2023-06-26 04:54:19.025050: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (4377aadca6174fc097614695eae1a68b000000): /proc/driver/nvidia/version does not exist
+2023-06-26 04:54:19,042 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/inputs/queues/feeding_queue_runner.py:60: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+2023-06-26 04:54:19,043 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/inputs/queues/feeding_functions.py:491: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+2023-06-26 04:54:19,049 tensorflow           INFO       |   Calling model_fn.
+2023-06-26 04:54:19,458 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:532: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow_estimator/python/estimator/canned/linear.py:1468: UserWarning: `layer.add_variable` is deprecated and will be removed in a future version. Please use `layer.add_weight` method instead.
+  self.bias = self.add_variable(
+2023-06-26 04:54:20,252 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/keras/optimizer_v2/adagrad.py:83: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2023-06-26 04:54:20,428 tensorflow           INFO       |   Done calling model_fn.
+2023-06-26 04:54:20,428 tensorflow           INFO       |   Create CheckpointSaverHook.
+2023-06-26 04:54:20,730 tensorflow           INFO       |   Graph was finalized.
+2023-06-26 04:54:20.731162: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-06-26 04:54:20,863 tensorflow           INFO       |   Running local_init_op.
+2023-06-26 04:54:20,885 tensorflow           INFO       |   Done running local_init_op.
+2023-06-26 04:54:20,916 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow/python/training/monitored_session.py:918: start_queue_runners (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+2023-06-26 04:54:21,670 tensorflow           INFO       |   Calling checkpoint listeners before saving checkpoint 0...
+2023-06-26 04:54:21,671 tensorflow           INFO       |   Saving checkpoints for 0 into /tmp/tmpswx4_nty/checkpoints/model.ckpt.
+2023-06-26 04:54:21,840 tensorflow           INFO       |   Calling checkpoint listeners after saving checkpoint 0...
+2023-06-26 04:54:22,308 tensorflow           INFO       |   loss = 3.6271849, step = 0
+2023-06-26 04:54:23,025 tensorflow           INFO       |   global_step/sec: 13.9347
+2023-06-26 04:54:23,025 tensorflow           INFO       |   loss = 0.939976, step = 10 (0.718 sec)
+2023-06-26 04:54:23,058 tensorflow           INFO       |   global_step/sec: 300.512
+2023-06-26 04:54:23,058 tensorflow           INFO       |   loss = 0.6211159, step = 20 (0.033 sec)
+2023-06-26 04:54:23,086 tensorflow           INFO       |   global_step/sec: 358.463
+2023-06-26 04:54:23,086 tensorflow           INFO       |   loss = 0.45933166, step = 30 (0.028 sec)
+2023-06-26 04:54:23,115 tensorflow           INFO       |   global_step/sec: 344.371
+2023-06-26 04:54:23,115 tensorflow           INFO       |   loss = 0.41469556, step = 40 (0.029 sec)
+2023-06-26 04:54:23,143 tensorflow           INFO       |   global_step/sec: 355.362
+2023-06-26 04:54:23,144 tensorflow           INFO       |   loss = 0.49648005, step = 50 (0.028 sec)
+2023-06-26 04:54:23,173 tensorflow           INFO       |   global_step/sec: 335.945
+2023-06-26 04:54:23,173 tensorflow           INFO       |   loss = 0.45245057, step = 60 (0.030 sec)
+2023-06-26 04:54:23,203 tensorflow           INFO       |   global_step/sec: 328.53
+2023-06-26 04:54:23,204 tensorflow           INFO       |   loss = 0.38491458, step = 70 (0.030 sec)
+2023-06-26 04:54:23,233 tensorflow           INFO       |   global_step/sec: 341.136
+2023-06-26 04:54:23,233 tensorflow           INFO       |   loss = 0.3074594, step = 80 (0.029 sec)
+2023-06-26 04:54:23,262 tensorflow           INFO       |   global_step/sec: 341.946
+2023-06-26 04:54:23,262 tensorflow           INFO       |   loss = 0.31327057, step = 90 (0.029 sec)
+2023-06-26 04:54:23,293 tensorflow           INFO       |   global_step/sec: 322.522
+2023-06-26 04:54:23,294 tensorflow           INFO       |   loss = 0.3274962, step = 100 (0.031 sec)
+2023-06-26 04:54:23,322 tensorflow           INFO       |   global_step/sec: 342.272
+2023-06-26 04:54:23,323 tensorflow           INFO       |   loss = 0.30667084, step = 110 (0.029 sec)
+2023-06-26 04:54:23,365 tensorflow           INFO       |   global_step/sec: 235.067
+2023-06-26 04:54:23,365 tensorflow           INFO       |   loss = 0.24500898, step = 120 (0.043 sec)
+2023-06-26 04:54:23,390 tensorflow           INFO       |   global_step/sec: 401.63
+2023-06-26 04:54:23,390 tensorflow           INFO       |   loss = 0.24613003, step = 130 (0.025 sec)
+2023-06-26 04:54:23,444 tensorflow           INFO       |   Calling checkpoint listeners before saving checkpoint 136...
+2023-06-26 04:54:23,444 tensorflow           INFO       |   Saving checkpoints for 136 into /tmp/tmpswx4_nty/checkpoints/model.ckpt.
+2023-06-26 04:54:23,446 tensorflow           WARNING    |   From /azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/site-packages/tensorflow/python/training/saver.py:1056: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2023-06-26 04:54:23,569 tensorflow           INFO       |   Calling checkpoint listeners after saving checkpoint 136...
+2023-06-26 04:54:23,593 tensorflow           INFO       |   Loss for final step: 0.19903132.
+2023-06-26 04:54:23,594 studio.core          INFO       Training Wide & Deep recommendation model - End with 4.5804s elapsed.
+2023-06-26 04:54:23,594 studio.core          INFO       Create deployment handler and inject schema and sample. - Start:
+2023-06-26 04:54:23,595 studio.core          INFO       Create deployment handler and inject schema and sample. - End with 0.0009s elapsed.
+2023-06-26 04:54:23,595 studio.core          INFO       Saving Wide & Deep recommendation model - Start:
+2023-06-26 04:54:24,237 studio.core          INFO       Saving Wide & Deep recommendation model - End with 0.6413s elapsed.
+2023-06-26 04:54:24,237 studio.azureml.designer.core.model.model_spec.model_spec DEBUG      spec = {'flavor': {'name': 'custom', 'module': 'azureml.designer.modules.recommendation.dnn.wide_and_deep.common.wide_n_deep_model', 'class': 'WideNDeepModel'}, 'model_file': 'model', 'time_created': '2023-06-26T04:54:24.237596+0000'}
+Cleaning up all outstanding Run operations, waiting 300.0 seconds
+1 items cleaning up...
+Cleanup took 0.0600285530090332 seconds
+Traceback (most recent call last):
+  File "urldecode_invoker.py", line 130, in <module>
+    execute(decoded_args)
+  File "urldecode_invoker.py", line 74, in execute
+    exit(ret)
+  File "/azureml-envs/azureml_1bc52e63abfbe62ce8ba78c5d32b88c5/lib/python3.8/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: 0
+
